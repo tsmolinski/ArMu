@@ -78,11 +78,11 @@ bool CGameLogic::CheckCollisions()
 
 void CGameLogic::UpdatePointsCount()
 {
-    if (m_Player.GetX() > m_World.GetFirstObstacle().GetX() &&
-        m_LastScoredObstacleIndex != m_World.GetFirstObstacleIndex())
+    if (m_Player.GetX() > m_World.GetObstacleAtIndex(m_NextObstacleIndex).GetX())
     {
         m_Points++;
-        m_LastScoredObstacleIndex = m_World.GetFirstObstacleIndex();
+        m_NextObstacleIndex++;
+        m_NextObstacleIndex = m_NextObstacleIndex % m_World.GetObstaclesCount();
 
         m_PointsScale = POINTS_OBTAINSCALE;
         m_PointsScaleAnimTime = POINTS_SCALE_ANIM_TIME;
@@ -176,7 +176,7 @@ void CGameLogic::ResetGame()
     m_World.ResetWorld();
 
     m_Points = 0;
-    m_LastScoredObstacleIndex = -1;
+    m_NextObstacleIndex = 0;
 
     m_GameState = EGameState::Start;
 }

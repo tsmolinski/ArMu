@@ -81,6 +81,16 @@ int CWorld::GetFirstObstacleIndex() const
     return m_FirstObstacleIndex;
 }
 
+const CObstacle& CWorld::GetObstacleAtIndex(int index) const
+{
+    return m_Obstacles[index];
+}
+
+int CWorld::GetObstaclesCount() const
+{
+    return OBSTACLES_COUNT;
+}
+
 
 float CWorld::GetObstacleRandomYPosition() const
 {

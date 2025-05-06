@@ -14,6 +14,9 @@ public:
 
     const CObstacle& GetFirstObstacle() const;
     int GetFirstObstacleIndex() const;
+    const CObstacle& GetObstacleAtIndex(int index) const;
+
+    int GetObstaclesCount() const;
 
     void Initialize(const CResourceManager& resourceManager);
 

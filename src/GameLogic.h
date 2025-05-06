@@ -61,7 +61,7 @@ private:
     float m_PlayerSpeed = 100.0f;
 
     int m_Points = 0;
-    int m_LastScoredObstacleIndex = -1;
+    int m_NextObstacleIndex = 0;
 
     float m_PointsScale = 4.0f;
     float m_PointsScaleAnimTime = 0.0f;
