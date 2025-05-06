@@ -24,6 +24,11 @@ void CObstacle::SetPosition(float x, float y)
     m_Pipes[1].SetPosition(GetX(), GetY() + BOTTOM_PIPE_Y);
 }
 
+bool CObstacle::isOffScreen()
+{
+    return (m_Pipes[1].GetX() + m_Pipes[1].GetWidth()) < 0.f;
+}
+
 
 void CObstacle::Render(SDL_Renderer* renderer)
 {

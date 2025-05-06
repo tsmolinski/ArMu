@@ -23,6 +23,8 @@ public:
         return m_Pipes;
     }
 
+    bool isOffScreen();
+
 private:
 
     CImage2D m_Pipes[2];
