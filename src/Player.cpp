@@ -43,7 +43,7 @@ void CPlayer::Animate(float deltaTime)
     if (m_AnimationTime >= ANIMATION_INTERVAL)
     {
         m_AnimationTime = 0.0f;
-        m_CurrentImageIndex = (m_CurrentImageIndex + 1) % 4;
+        m_CurrentImageIndex = (m_CurrentImageIndex + 1) % 3;
     }
 }
 
