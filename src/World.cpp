@@ -67,6 +67,9 @@ bool CWorld::CheckPlayerCollision(const CObject2D& player) const
 
     result |= m_Ceil.CheckCollisionWith(player);
 
+    for (const auto& floor : m_Floor)
+        result |= floor.CheckCollisionWith(player);
+
     return result;
 }
 
