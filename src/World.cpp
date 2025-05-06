@@ -30,7 +30,7 @@ void CWorld::Initialize(const CResourceManager& resourceManager)
     int obstacleId = 0;
     for (auto& obstacle : m_Obstacles)
     {
-        obstacle.SetPosition(OBSTACLE_START_OFFSET_X + obstacleId * OBSTACLES_DISTANCE, GetObstacleRandomYPosition());
+        obstacle.SetPosition((OBSTACLE_START_OFFSET_X + obstacleId * OBSTACLES_DISTANCE) + GetObstacleRandomXOffset(), GetObstacleRandomYPosition());
         obstacleId++;
     }
 }
@@ -48,7 +48,7 @@ void CWorld::ResetWorld()
     int obstacleId = 0;
     for (auto& obstacle : m_Obstacles)
     {
-        obstacle.SetPosition(OBSTACLE_START_OFFSET_X + obstacleId * OBSTACLES_DISTANCE, GetObstacleRandomYPosition());
+        obstacle.SetPosition((OBSTACLE_START_OFFSET_X + obstacleId * OBSTACLES_DISTANCE) + GetObstacleRandomXOffset(), GetObstacleRandomYPosition());
         obstacleId++;
     }
 
@@ -100,6 +100,11 @@ float CWorld::GetObstacleRandomYPosition() const
     return static_cast<float>(rand() % static_cast<int>(OBSTACLE_MAX_Y - OBSTACLE_MIN_Y)) + OBSTACLE_MIN_Y;
 }
 
+float CWorld::GetObstacleRandomXOffset() const
+{
+    return static_cast<float>(rand() % static_cast<int>(OBSTACLE_MAX_X_OFFSET - OBSTACLE_MIN_X_OFFSET) + OBSTACLE_MIN_X_OFFSET);
+}
+
 
 void CWorld::Update(float deltaTime)
 {
@@ -116,7 +121,7 @@ void CWorld::Update(float deltaTime)
 
         if (obstacle.isOffScreen())
         {
-            obstacle.SetPosition((OBSTACLES_COUNT * OBSTACLES_DISTANCE), GetObstacleRandomYPosition());
+            obstacle.SetPosition((OBSTACLES_COUNT * OBSTACLES_DISTANCE) + GetObstacleRandomXOffset(), GetObstacleRandomYPosition());
         }
     }
 }

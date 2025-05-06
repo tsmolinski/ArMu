@@ -31,6 +31,8 @@ public:
 private:
     float GetObstacleRandomYPosition() const;
 
+    float GetObstacleRandomXOffset() const;
+
     static constexpr int OBSTACLES_COUNT = 5;
     static constexpr int FLOOR_COUNT = 2;
     static constexpr float FLOOR_Y = 500.0f;
@@ -38,6 +40,8 @@ private:
     static constexpr float OBSTACLES_DISTANCE = 250.0f;
     static constexpr float OBSTACLE_MIN_Y = -120.0f;
     static constexpr float OBSTACLE_MAX_Y = 70.0f;
+    static constexpr float OBSTACLE_MIN_X_OFFSET = -50.0f;
+    static constexpr float OBSTACLE_MAX_X_OFFSET = 100.0f;
 
     CImage2D m_Background;
     CImage2D m_Floor[2];
