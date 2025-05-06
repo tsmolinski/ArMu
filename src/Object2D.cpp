@@ -17,6 +17,10 @@ void CObject2D::StartRotate(float destinationAngle, float rotationTime)
 }
 
 
+void CObject2D::Render(SDL_Renderer* renderer)
+{
+}
+
 void CObject2D::Reset()
 {
     m_DestinationAngle = 0.0f;

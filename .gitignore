@@ -3,6 +3,14 @@
 # Learn more about .gitignore:
 #     https://www.atlassian.com/git/tutorials/saving-changes/gitignore
 
+# Visual Studio files
+.vs/
+
+# CMake files
+/out
+bin/
+CMakeSettings.json
+
 # Node artifact files
 node_modules/
 dist/
