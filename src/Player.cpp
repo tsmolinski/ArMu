@@ -57,7 +57,10 @@ void CPlayer::HandlePhysics(float deltaTime)
         m_UpwardForce -= JUMP_FORCE * deltaTime;
 
     if (m_UpwardForce < 0.0f)
+    {
         m_UpwardForce = 0.0f;
+        StartRotate(90.f, 0.1f);
+    }
 
     m_y += (GRAVITY - m_UpwardForce) * deltaTime;
 }
@@ -77,6 +80,7 @@ void CPlayer::Render(SDL_Renderer* renderer)
 void CPlayer::Flap()
 {
     m_UpwardForce = JUMP_FORCE;
+    StartRotate(-30.f, 0.05f);
 }
 
 
