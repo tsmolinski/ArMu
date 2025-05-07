@@ -23,7 +23,7 @@ public:
         return m_Pipes;
     }
 
-    bool isOffScreen();
+    bool IsOffScreen();
 
 private:
 

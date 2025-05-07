@@ -119,7 +119,7 @@ void CWorld::Update(float deltaTime)
     {
         obstacle.SetPosition(obstacle.GetX() - m_WorldMoveSpeed * deltaTime, obstacle.GetY());
 
-        if (obstacle.isOffScreen())
+        if (obstacle.IsOffScreen())
         {
             obstacle.SetPosition((OBSTACLES_COUNT * OBSTACLES_DISTANCE) + GetObstacleRandomXOffset(), GetObstacleRandomYPosition());
         }
